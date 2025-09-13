@@ -7,11 +7,11 @@ double memory = 0;
 double val = 0;
 bool firstInput = true;
 char[] TwoNumOperators = { '+', '-', '/', '*', '%', '^' };
-string[] OneNumOperators = { "M+", "M-", "MR" };
+string[] OneNumOperators = { "M+", "M-", "MR", "√" };
 
 Console.WriteLine("Проект 'калькулятор' на C#");
 Console.WriteLine("Для выхода введите exit \nДля использования калькулятора введите 1 число");
-Console.WriteLine("Список операций: + - / * % ^ M+ M- MR");
+Console.WriteLine("Список операций: + - / * √ % ^ M+ M- MR");
 while (true)
 {
     string input = Console.ReadLine().Trim();
@@ -74,6 +74,10 @@ while (true)
                     break;
                 case "MR":
                     Console.WriteLine("Память: " + memory);
+                    break;
+                case "√":
+                    val = Math.Sqrt(val);
+                    Console.WriteLine("Результат: " + val);
                     break;
             }
             firstInput = true;
